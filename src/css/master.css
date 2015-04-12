@@ -1,3 +1,39 @@
+body{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .staff-pic {
   max-height: 250px;
+}
+
+#spar-nav.affix{
+	top: 24px;
+}
+
+/* hide sidebar sub menus by default */
+#spar-nav .nav .nav {
+	display: none;
+  font-size:12px;
+}
+
+/* show sub menu when parent is active */
+#spar-nav .nav>.active>ul {
+	display: block;
+}
+
+/* Indent sub nav */
+#spar-nav .nav .nav{
+	margin-left: 20px;
+}
+
+/* add border to active links */
+#spar-nav .nav .active>a, #spar-nav .nav .active>a:hover{
+	border-left: 2px solid #2196f3;
+}
+
+#spar-nav .nav>li>a:hover{
+	background: none;
+	border-left: 1px solid #2196f3;
 }

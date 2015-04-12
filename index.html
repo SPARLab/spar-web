@@ -7,62 +7,78 @@
     <link rel="stylesheet" href="assets/bootswatch/bootstrap.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="src/css/master.css" media="screen" charset="utf-8">
   </head>
-  <body>
+
+  <body data-spy="scroll" data-target="#spar-nav">
     <div class="container">
+
       <!-- Page header -->
       <div class="page-header">
-        <h1>SPAR Lab <small>Spatial Pattern Analysis & Research</small></h1>
+        <h1>
+          <img src="images/SPAR_logo2_transparent.png" alt="SPARLab" width="350px" />
+          <small>Spatial Pattern Analysis & Research</small>
+        </h1>
       </div>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Mobile Toggle -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-          </div>
+      <!-- Page body -->
+      <div class="row">
+        <!-- Content gets inserted here from /html via jQuery-->
+        <div class="col-xs-10">
+          <div id="about"></div>
+          <div id="recent"></div>
+          <div id="people"></div>
+          <div id="downloads"></div>
+          <div id="publications"></div>
+          <div id="contact"></div>
+          <div id="photos"></div>
+        </div>
 
+        <!-- Navigation bar -->
+        <div class="col-xs-2 category-nav">
           <!-- Links -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="#home" onclick="javascript:$('.body-content').load('html/home.html', selectActive);">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href="#people" onclick="javascript:$('.body-content').load('html/people.html', selectActive);">People</a></li>
-              <li><a href="#downloads" onclick="javascript:$('.body-content').load('html/downloads.html', selectActive);">Downloads</a></li>
-              <li><a href="#publications" onclick="javascript:$('.body-content').load('html/publications.html', selectActive);">Publications</a></li>
-              <li><a href="#contact" onclick="javascript:$('.body-content').load('html/contact.html', selectActive);">Contact</a></li>
-              <li><a href="#photos" onclick="javascript:$('.body-content').load('html/photos.html', selectActive);">Photos</a></li>
+          <div id="spar-nav" data-spy="affix" data-offset-top="159">
+            <ul class="nav nav-stacked">
+              <li><a href="#about">About</a></li>
+              <li><a href="#recent">Recent Publications</a></li>
+              <li>
+                <a href="#people">People</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#lead-researcher">Lead researcher</a></li>
+                  <li><a href="#students">Students</a></li>
+                  <li><a href="#staff">Staff</a></li>
+                  <li><a href="#grads">Grads</a></li>
+                </ul>
+              </li>
+              <li><a href="#downloads">Downloads</a></li>
+              <li><a href="#publications">Publications</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <!-- <li><a href="#photos">Photos</a></li> -->
+              <li><a href="#"><small>Back to top</small></a></li>
             </ul>
           </div>
         </div>
-      </nav> <!-- /Navbar -->
+      </div>
 
-      <!-- Panels for page content are inserted here -->
-      <div class="body-content"></div></div>
+    </div>
+
 
     <!-- JAVASCRIPT -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-      // Load the appropriate page
+      // Load pages
       $(document).ready(function(){
-        var hash = window.location.hash;
-        selectActive();
-        if(hash) $('.body-content').load('html/' + hash.substring(1) + '.html');
-        else $('.body-content').load('html/home.html');
+        $('#about').load('html/about.html');
+        $('#recent').load('html/recent.html');
+        $('#people').load('html/people.html');
+        $('#downloads').load('html/downloads.html');
+        $('#publications').load('html/publications.html');
+        $('#contact').load('html/contact.html');
+        $('#photos').load('html/photos.html');
       });
 
-      function selectActive(){
-        $('.navbar-nav li.active').removeClass("active");
-        var hash = window.location.hash;
-        if(hash) $('.navbar-nav a[href="'+ hash +'"]').parent().addClass("active");
-        else $('.navbar-nav a[href="#home"]').parent().addClass("active");
-      }
+      // Make affixed nav width 100% of parent col
+      $(window).resize(function () { $('#spar-nav.affix').width($('.category-nav').width()); });
+      $(window).scroll(function () { $('#spar-nav.affix').width($('.category-nav').width()); });
     </script>
   </body>
 </html>
