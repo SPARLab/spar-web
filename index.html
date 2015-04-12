@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Spatial Pattern Analysis $ Research Laboratory</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="assets/bootswatch/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="src/css/master.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <!-- Page header -->
+      <div class="page-header">
+        <h1>SPAR Lab <small>Spatial Pattern Analysis & Research</small></h1>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Mobile Toggle -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+          </div>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#home" onclick="javascript:$('.body-content').load('html/home.html', selectActive);">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="#people" onclick="javascript:$('.body-content').load('html/people.html', selectActive);">People</a></li>
+              <li><a href="#downloads" onclick="javascript:$('.body-content').load('html/downloads.html', selectActive);">Downloads</a></li>
+              <li><a href="#publications" onclick="javascript:$('.body-content').load('html/publications.html', selectActive);">Publications</a></li>
+              <li><a href="#contact" onclick="javascript:$('.body-content').load('html/contact.html', selectActive);">Contact</a></li>
+              <li><a href="#photos" onclick="javascript:$('.body-content').load('html/photos.html', selectActive);">Photos</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav> <!-- /Navbar -->
+
+      <!-- Panels for page content are inserted here -->
+      <div class="body-content"></div></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      // Load the appropriate page
+      $(document).ready(function(){
+        var hash = window.location.hash;
+        selectActive();
+        if(hash) $('.body-content').load('html/' + hash.substring(1) + '.html');
+        else $('.body-content').load('html/home.html');
+      });
+
+      function selectActive(){
+        $('.navbar-nav li.active').removeClass("active");
+        var hash = window.location.hash;
+        if(hash) $('.navbar-nav a[href="'+ hash +'"]').parent().addClass("active");
+        else $('.navbar-nav a[href="#home"]').parent().addClass("active");
+      }
+    </script>
+  </body>
+</html>
