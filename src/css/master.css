@@ -37,3 +37,12 @@ body{
 	background: none;
 	border-left: 1px solid #2196f3;
 }
+
+.jumbotron{
+  background-image: url(../images/photos/uvic.jpg);
+  background-attachment: fixed;
+}
+
+#about .jumbotron, .jumbotron h1{
+	color: white;
+}
