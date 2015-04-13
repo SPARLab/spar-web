@@ -8,41 +8,55 @@ body{
   max-height: 250px;
 }
 
+/*NAV OPTIONS*/
 #spar-nav.affix{
 	top: 24px;
 }
-
 /* hide sidebar sub menus by default */
 #spar-nav .nav .nav {
 	display: none;
   font-size:12px;
 }
-
 /* show sub menu when parent is active */
 #spar-nav .nav>.active>ul {
 	display: block;
 }
-
 /* Indent sub nav */
 #spar-nav .nav .nav{
 	margin-left: 20px;
 }
-
 /* add border to active links */
 #spar-nav .nav .active>a, #spar-nav .nav .active>a:hover{
-	border-left: 2px solid #2196f3;
+	border-left: 2px solid #0a6ebd;
+  color: #0a6ebd
 }
-
 #spar-nav .nav>li>a:hover{
 	background: none;
-	border-left: 1px solid #2196f3;
+	border-left: 1px solid #0a6ebd;
+  color: #0a6ebd
+}
+#spar-nav .nav>li>a:focus{
+  background: none;
+  color: #2196f3
 }
 
-.jumbotron{
-  background-image: url(../images/photos/uvic.jpg);
+/* JUMBOTRON IMAGES AND CSS */
+#about .jumbotron{
+  background: url(../images/photos/uvic.jpg);
+  background-attachment: fixed;
+}
+#people .jumbotron{
+  background: url(../images/photos/DSC_2882.JPG);
   background-attachment: fixed;
 }
 
-#about .jumbotron, .jumbotron h1{
+.jumbotron span{
 	color: white;
+}
+.jumbotron h4{
+	text-shadow: 0px 0px 10px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
+	line-height: 28px;
+}
+.jumbotron h1{
+	text-shadow: 0px 0px 10px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
 }

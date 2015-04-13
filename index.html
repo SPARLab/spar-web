@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Spatial Pattern Analysis $ Research Laboratory</title>
+    <title>Spatial Pattern Analysis &amp Research Laboratory</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" charset="utf-8">
@@ -15,7 +15,7 @@
       <div class="page-header">
         <h1>
           <img src="../src/images/SPAR_logo2_transparent.png" alt="SPARLab" width="350px" />
-          <small>Spatial Pattern Analysis & Research</small>
+          <small>Spatial Pattern Analysis &amp Research Lab</small>
         </h1>
       </div>
 
@@ -66,15 +66,24 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/stellar.js/jquery.stellar.min.js"></script>
     <script>
-      $(document).ready(function(){
+      $(function(){
         // Load pages
-        $('#about').load('html/about.html');
-        $('#recent').load('html/recent.html');
-        $('#people').load('html/people.html');
-        $('#downloads').load('html/downloads.html');
-        $('#publications').load('html/publications.html');
-        $('#contact').load('html/contact.html');
-        $('#photos').load('html/photos.html');
+        $.when(
+          $.get('html/about.html', function(data){ $('#about').html(data) }),
+          $.get('html/recent.html', function(data){ $('#recent').html(data) }),
+          $.get('html/people.html', function(data){ $('#people').html(data) }),
+          $.get('html/downloads.html', function(data){ $('#downloads').html(data) }),
+          $.get('html/publications.html', function(data){ $('#publications').html(data) }),
+          $.get('html/contact.html', function(data){ $('#contact').html(data) }),
+          $.get('html/photos.html', function(data){ $('#photos').html(data) })
+        ).done(function() {
+          // Init parallax
+          $.stellar({
+            horizontalScrolling: false,
+          });
+        });
+
+
       });
 
       // Make affixed nav width 100% of parent col
