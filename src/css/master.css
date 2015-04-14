@@ -43,10 +43,19 @@ body{
 /* JUMBOTRON IMAGES AND CSS */
 #about .jumbotron{
   background: url(../images/photos/uvic.jpg);
+  background-size: 100%;
   background-attachment: fixed;
 }
 #people .jumbotron{
-  background: url(../images/photos/DSC_2882.JPG);
+  background: url(../images/photos/IMG_6614.jpg);
+  background-size: 100%;
+  /*background-repeat: no-repeat;*/
+  background-attachment: fixed;
+}
+#downloads .jumbotron{
+  background: url(../images/photos/IMG_3714.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
