@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head> <!--  Title displayed in top of the webbrowser --> <title>SPAR! Spatial Pattern
+			Analysis & Research Lab -- Cosine</title> <!-- The file with the style sheet -->
+		<link href="../style.css" rel="stylesheet" type="text/css" /> <!--[if lt IE 6.9]>
+
+     <style type="text/css">
+
+
+
+     #footer
+
+     {
+
+      left:1px;
+
+     }
+
+
+
+     #core_right
+
+     {
+
+      height:300px;
+
+      margin-left:5px;
+
+     }
+
+     .content-box
+
+     {
+
+      margin-left:5px;
+
+     }
+
+
+
+     </style>
+
+     <![endif]-->
+	</head>
+	<body>
+		<div id="container">
+			<div id="core_header2">
+				<div id="header_text"></div>
+			</div>
+			<div id="core_container">
+				<div id="core_container2">
+					<div id="core_left">
+						<div id="navcontainer">
+							<ul>
+								<li>
+									<a href="../index.html" title="Home">Home</a></li>
+								<li>
+									<a href="../people.html" title="People">People</a></li>
+								<li>
+									<a href="../tools.html" title="Downloads">Downloads</a></li>
+								<li>
+									<a href="../publications.html" title="Publications">Publications</a></li>
+								<li>
+									<a href="../contact.html" title="Contact">Contact</a></li>
+							</ul>
+						</div>
+					</div>
