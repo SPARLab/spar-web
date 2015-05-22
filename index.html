@@ -24,10 +24,9 @@
         <!-- Content gets inserted here from /html via jQuery-->
         <div class="col-xs-10">
           <div id="about"></div>
-          <div id="recent"></div>
+          <div id="publications"></div>
           <div id="people"></div>
           <div id="downloads"></div>
-          <div id="publications"></div>
           <div id="contact"></div>
           <div id="photos"></div>
         </div>
@@ -38,7 +37,7 @@
           <div id="spar-nav" data-spy="affix" data-offset-top="159">
             <ul class="nav nav-stacked">
               <li><a href="#about">About</a></li>
-              <li><a href="#recent">Recent Publications</a></li>
+              <li><a href="#publications">Publications</a></li>
               <li>
                 <a href="#people">People</a>
                 <ul class="nav nav-stacked">
@@ -49,7 +48,6 @@
                 </ul>
               </li>
               <li><a href="#downloads">Downloads</a></li>
-              <li><a href="#publications">Publications</a></li>
               <li><a href="#contact">Contact</a></li>
               <!-- <li><a href="#photos">Photos</a></li> -->
               <li><a href="#"><small>Back to top</small></a></li>
@@ -70,7 +68,6 @@
         // Load pages
         $.when(
           $.get('html/about.html', function(data){ $('#about').html(data) }),
-          $.get('html/recent.html', function(data){ $('#recent').html(data) }),
           $.get('html/people.html', function(data){ $('#people').html(data) }),
           $.get('html/downloads.html', function(data){ $('#downloads').html(data) }),
           $.get('html/publications.html', function(data){ $('#publications').html(data) }),
