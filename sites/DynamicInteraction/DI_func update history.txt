@@ -1,0 +1,16 @@
+Update History for code in DI_func.r
+#===============================================================================================
+
+
+Feb. 11, 2013	- Fixed an error in calculation of Shirabe, if you are using this metric please
+			re-run your analyses.
+
+Dec. 10, 2012 	- Formally added the Prox functionality to the toolset
+		- added use of ld(), dl() everywhere to facilitate trajects with bursts
+
+Nov. 14, 2012 	- added as.numeric around denominator in Minta chiINT calculation
+
+Nov. 13, 2012 	- added check for legnth of intersection vectors in Minta
+
+Nov. 8, 2012 	- added check in Minta to see if HR overlaps, or contains other HR
+             	- Fixed a typo in ChiSquare test in Minta

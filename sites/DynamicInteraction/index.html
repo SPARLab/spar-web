@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Spatial Pattern Analysis &amp Research Laboratory -- PPA Home Range</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/src/assets/bootswatch/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/src/css/master.css" media="screen" charset="utf-8">
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Page header -->
+      <div class="page-header">
+        <h1>
+          <a href="/">
+            <img src="/src/images/SPAR_logo2_transparent.png" alt="SPARLab" width="350px" />
+          </a>
+          <small>Spatial Pattern Analysis &amp Research Lab</small>
+        </h1>
+      </div>
+
+      <!-- Page body -->
+      <div class="row">
+        <div class="col-xs-12">
+
+          <h2>wildlifeDI: Calculate Indices of Dynamic Interaction for Wildlife Telemetry Data</h2>
+          The development of this suite of tools was motivated by our recent paper on developing a novel path-based measure of dynamic interaction
+               <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1467-9671.2012.01353.x/abstract",title="Long & Nelson 2013">(Long & Nelson 2013)</a>.
+          Following up on this research it seemed logical to compare the method we developed with those other methods currently available
+         (see Long et al., 2014).
+
+          <p>
+            The goal of this website is to provide access to the tools I have developed
+            with my own dynamic interaction research. I hope you too can use these tools to investigate dynamic
+            interaction patterns in your own wildlife telemetry datasets. I would appreciate
+            any feedback you may have concerning the suite of tools provided here.
+          </p>
+
+          <h3>Available Methods</h3>
+          <ul>
+            <li>Prox - Proximity analysis (Bertrand et al 1996)</li>
+            <li>Ca - Coefficient of Association (Cole 1949; Bauman 1998)</li>
+            <li>Don - Doncaster's Non-Parametric Test (Doncaster 1990)</li>
+            <li>Lixn, Laa, Lbb - Minta's tests for spatial and temporal interaction (Minta 1992)</li>
+            <li>Cs - Coefficient of Sociality (Kenward et al. 1993)</li>
+            <li>HAI - Half-weight Association Index (Brotherton et al. 1997)</li>
+            <li>Cr - Correlation Coefficient (Shirabe 2006)</li>
+            <li>DI - Dynamic Interaction Index (Long and Nelson 2012)</li>
+          </ul>
+
+          <h3>Download</h3>
+          <p>
+            Download the package from <a href="http://cran.r-project.org/web/packages/wildlifeDI/index.html",title="WildlifeDI">CRAN</a>
+          </p>
+
+          <p>
+            Make sure you read through the documentation and vignette to get a handle on how these tools work and what the output is measuring.<br><br>
+          </p>
+
+          <h3>Additional Information</h3>
+          The package wildlifeDI has been developed for use within the statistical software
+          <a href="http://cran.r-project.org/" title="R">R</a>. It relies heavily on the
+          data structures and methods developed in the <a href="http://cran.r-project.org/web/packages/adehabitat/index.html" title="adehabitat"><font face="courier">adehabitat</font></a>
+          suite of packages which are extremely useful in the analysis of wildlife telemetry data. <br><br>
+          For more information on the use of the <font face="courier">adehabitat</font> objects and methods see
+          the documentation and vignettes provided alongside each package, and the paper
+          by Calenge <a href="http://www.sciencedirect.com/science/article/pii/S0304380006001414",title="Calenge 2006">(2006)</a>.
+
+          <p>
+            Should you have any further questions please contact me via email: jed.long@st-andrews.ac.uk
+          </p>
+
+          <h3>References</h3>
+          <div class="references">
+            <p>Bauman PJ. 1998. The Wind Cave National Park elk herd: home ranges, seasonal movements, and alternative control  methods. MS Thesis, South Dakota State University, Brookings, USA.</p>
+            <p>Bertrand MR, DeNicla AJ, Beissinger SR, Swihart RK. 1996. Effects of parturition on home ranges and social affiliations of female white-tailed deer. <em>Journal of Wildlife Management</em> 60: 899-909.</p>
+            <p>Brotherton P, Pemberton J, Komers P, Malarky G. 1997. Genetic and behavioural evidence of monogamy in a mammal, Kirk's dik-dik (Madoquakirkii). <em>Proceedings of the Royal Society of London: Series B Biological Sciences</em> 264: 675-681.</p>
+            <p>Calenge C. 2006. The package "adehabitat" for the R software: A tool for the analysis of space and habitat use by animals. <em>Ecological Modelling</em> 197: 516-519.</p>
+            <p>Cole LC. 1949. The measurement of interspecific association. <em>Ecology</em> 30: 411-424.</p>
+            <p>Doncaster CP. 1990. Non-parametric estimates of interactions from radio-tracking data. <em>Journal of Theoretical Biology</em> 143: 431-443.</p>
+            <p>Kenward RE, Marcstrom V, Karlbom M. 1993. Post-nestling behaviour in goshawks, Accipiter gentilis: II. Sex differences in sociality and nest-switching. <em>Animal Behaviour</em> 46: 371-378.</p>
+            <p>Long JA, Nelson TA. 2013. Measuring dynamic interaction in movement data <em>Transactions in GIS</em>. 17(1): 62-77.</p>
+            <p>Long, JA, Nelson, TA, Webb, SL, Gee, K (2014). A critical examination of indices of dynamic interaction for wildlife telemetry studies. <em>Journal of Animal Ecology</em>. 83(5): 1216-1233. </p>
+            <p>Minta SC. 1992. Tests of spatial and temporal interaction amoung animals. <em>Ecological Applications</em> 2: 178-188.</p>
+            <p>Shirabe T. 2006. Correlation analysis of discrete motions. In GIScience 2006. LNCS, vol. 4197, Raubal M, Miller HJ, Frank AU, Goodchild MF (eds.); Springer-Verlag: Berlin; 370-382.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
