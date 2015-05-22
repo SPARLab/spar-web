@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Spatial Pattern Analysis &amp Research Laboratory -- PPA Home Range</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/src/assets/bootswatch/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/src/css/master.css" media="screen" charset="utf-8">
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Page header -->
+      <div class="page-header">
+        <h1>
+          <a href="/">
+            <img src="/src/images/SPAR_logo2_transparent.png" alt="SPARLab" width="350px" />
+          </a>
+          <small>Spatial Pattern Analysis &amp Research Lab</small>
+        </h1>
+      </div>
+
+      <!-- Page body -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Calculating the PPA Home Range</h2>
+          <p>
+            This website contains instructions and access to tools useful for computing the PPA home range which is described in the article:
+            <br>
+            Long, JA and TA Nelson (2012) Time geography and wildlife home range delineation. <em>Journal of Wildlife Management</em>. 76(2): 407-413
+          </p>
+
+          <p class="lead">
+            The PPA home range draws on the concept of the potential path area (PPA) from time geography. Between two telemetry fixes the PPA home
+            range can be simply defined as the area accessible to the animal conditional on the mobility parameter - <em>v</em><sub>max</sub>. In space
+            this object is computed as a perfect ellipse, whose geometric properties can be derived from the coordinates of the telemetry fixes, the
+            time difference between them, and <em>v</em><sub>max</sub> (see Figure 1a). The PPA home range is then the spatial union of the individual
+            PPA ellipses between each pair of consecutive telemetry fixes (see Figure 1b).
+          </p>
+
+          <p>
+            <img class="img-responsive" src="PPA_properties_website.png" width="650" height="260" align="center" alt="Home Range Properties">
+          </p>
+
+          <p>
+            <strong>Figure 1:</strong> a) Calculation of the PPA ellipse between telemetry fixes <em>i</em> and <em>j</em> requires parameters obtained from the geometry of the two
+            points, their time difference, and the mobility parameter (<em>v</em><sub>max</sub>): <em>a</em> - major axis, <em>b</em> - minor axis, <em>d</em> - distance between fixes <em>i</em> and <em>j</em>,
+            <em>CP</em> - center point of <em>i</em> and <em>j</em>, and <em>R<sub>&theta;</sub></em> - the rotation from the horizontal.  b) The computation of the PPA home range is the spatial union of
+            <em>n</em>-1 PPA elipses.
+          </p>
+
+          <p class="lead">
+            Here we provide code for implementing the PPA home range in a few ways. Please note the R version of the implementation is by far the most
+            advanced, and has been updated more recently to include new ways for computing the <em>v</em><sub>max</sub> parameter.
+          </p>
+
+          <ol>
+            <li>
+              The statistical software <a href="http://cran.r-project.org/" title="R">R</a>
+              <ul>
+                <li>Download the R code and instruction guide <a href="PPAHomeRange_R.zip" title="PPA Home Range in R">here</a></li>
+              </ul>
+            </li>
+            <li>
+              In the GIS software <a href="http://www.esri.com/products/index.html" title="ArcGIS">ArcGIS</a>
+              <ul>
+                <li>We have created a tool that is stored as a .mxd file for use in ArcGIS 9.3 available <a href="PPAHomeRange_mxd.zip" title="PPA Home Range Tool">here</a>.</li>
+                <li>Alternatively, a VBA script that can be run within ArcGIS 8.x, and 9.x can be downloaded <a href="PPAHomeRange_VBA.zip" title="PPA Home Range using VBA">here</a>.</li>
+                <li>We are also looking into creating a newer version of the tool in Python for use in ArcGIS 10, that will hopefully be a bit more user friendly.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <br>
+
+          <p>
+            Should you have any further questions please contact me via email: jlong AT uvic.ca
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
