@@ -52,12 +52,6 @@ body{
   /*background-repeat: no-repeat;*/
   background-attachment: fixed;
 }
-#downloads .jumbotron{
-  background: url(../images/photos/IMG_3714.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
 .jumbotron span{
 	color: white;
@@ -70,6 +64,7 @@ body{
 	text-shadow: 0px 0px 10px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
 }
 
+/* Hanging indent class */
 .references{
   padding-left: 3em;
   text-indent: -3em;
