@@ -42,12 +42,12 @@ body{
 
 /* JUMBOTRON IMAGES AND CSS */
 #about .jumbotron{
-  background: url(../images/photos/uvic.jpg);
+  background: url(../images/headers/uvic.jpg);
   background-size: 100%;
   background-attachment: fixed;
 }
 #people .jumbotron{
-  background: url(../images/photos/IMG_6614.jpg);
+  background: url(../images/headers/IMG_6614.jpg);
   background-size: 100%;
   /*background-repeat: no-repeat;*/
   background-attachment: fixed;
