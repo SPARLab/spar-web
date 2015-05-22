@@ -1,3 +1,45 @@
 <div class="page-header">
   <h2>Photos</h2>
 </div>
+
+<div class="row" id="photo-thumbs"></div>
+
+<script>
+  var base_dir = "/src/images/photos/";
+  var dirs = [
+    ["Spar2014/", "2014"],
+    ["Spar2012/", "2012"],
+    ["Spar2011/", "2011"],
+    ["Spar2010/", "2010"],
+    ["Spar2009/", "2009"],
+    ["Spar2008/", "2008"],
+  ];
+
+  dirs.forEach(function(dir){
+    title = dir[1];
+    dir = dir[0];
+
+    $.ajax({
+      //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+      url: base_dir + dir,
+      success: function (data) {
+        $(data).find("a").each(function () {
+            var filename = this.href.replace(window.location.host, "").replace("http:///", "");
+            var extension = filename.substr( (filename.lastIndexOf('.') +1) );
+            if (['jpg', 'jpeg', 'png'].indexOf(extension.toLowerCase()) >= 0){
+
+              $("#photo-thumbs").append(
+                "<div class='thumbnail col-xs-6 col-sm-4 col-md-3'>"
+                  +"<img class='img-responsive img-thumbnail' src=" + base_dir + dir + filename + "></img>"
+                +"</div>"
+              );
+
+            }
+        });
+      }
+    }).done(function(){
+      console.log("images loaded");
+      // See if portrait image and if so add portrait class
+    });
+  })
+</script>
