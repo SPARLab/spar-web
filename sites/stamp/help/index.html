@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>STAMP HTML Help -- Welcome</title></head>
+
+<body>
+<table width="80%">
+
+<tr>
+<td align="center">
+
+<table width="100%">
+<tr>
+<td align= "center"><a href="index.html">Home</a></td><td align= "center"><a href="overview.html">STAMP Overview</a></td>  <td align= "center"><a href="utility.html">Polygon Utility</a></td><td align= "center"><a href="overlay.html">Polygon Overlay</a></td>  <td align= "center"><a href="voronoi.html">Voronoi Polygons</a></td>  <td align= "center"><a href="metrics.html">Polygon Metrics</a></td>  <td align= "center"><a href="about.html">About</a></td>  <td align= "center"><a href="feedback.html">Feedback</a></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr><td><b>STAMP Toolbar for ArcGIS Homepage</b></td></tr>
+
+<tr><td>
+
+<table width="100%" border="2">
+<tr>
+<td valign="top">
+
+Welcome to the homepage for the STAMP Toolbar for ArcGIS . This toolbar implements functionality outlined in the paper: STAMP: Spatial-temporal analysis of moving polygons, <a href="http://www.springerlink.com/content/f021203164466r46/?p=26fdd199c440422aad1e3020a459d980&pi=0">published in the Journal of Geographical Systems, 	Volume 9, Number 3 / September, 2007</a>. <br />
+<br />
+The main purpose of STAMP is to facilitate spatial-temporal analysis of polygon data. This can be useful for analysis of phenomena that change spatially through time. Examples include examining a spreading wildfire in a forested area, and the spread of forest insects across a landscape. We hope that others will find additional uses for these methods.
+
+<br /><br />
+Polygons from consecutive years are unioned, and the unioned layers are called "change layers". These change layers are made up of polygons that are given an <i>event type</i>, which describes the type of change that occured between the two times. Events are designated in the change layers based on spatial relationships between input polygons. The spatial relationships that create events are outlined below.<br /><br />
+
+<td align="center">Download STAMP Toolbar for ArcGIS as an msi executable (updated Dec 6 2007). Requires ArcGIS 9.2.<br /><br /><a href="stamp_arcgis92.msi">stamp_arcgis92.msi</a><br><br><a href="testData.zip">here's some test data</a><br><br><a href="tips.html">read the tip sheet first!</a></td>
+
+<table><i><br /><br />Events derived from SPATIAL OVERLAP</i><br /><br />
+<tr><th>T1 polygons (solid fill) and T2 polygons(dotted) in Change Layer</th><th>Events [attribute codes]</th></tr>
+<tr><td><img src="images/case1.png" /></td><td>1 = Contraction [CONTR]<br />2 = Stable [STABLE]<br />3 = Expansion [EXP]</td></tr>
+<tr><td><img src="images/case4.png" /></td><td>1 = Expansion [EXP] <br />2 = Stable [STABLE]<br />3 = Contraction [CONTR](Division)<br />4 = Stable [STABLE]<br />5 = Expansion [EXP]</td></tr>
+<tr><td><img src="images/case5.png" /></td><td>1 = Contraction [CONTR]<br />2 = Stable [STABLE]<br />3 = Expansion [EXP](Union)<br />4 = Stable [STABLE]<br />5 = Contraction [CONTR]</td></tr>
+</table>
+
+<table><i><br /><br />Events derived from SPATIAL PROXIMITY</i><BR /><br />
+Movement events are derived for polygons within a distance threshold (d). These events can be classified by either the destination of the movement (T2 polygon) or the source of the movement (T1 polygon). The classications below are for T2 movements, but the T1 classification is given in brackets.
+<tr><th>T1 polygons (solid fill) and T2 polygons(dotted) in Change Layer</th><th>Events</th></tr>
+<tr><td><img src="images/case2.png" /></td><td>1 = Disappearance [DIS]<br />2 = Displacement [GD] ([DG] for T1)</td></tr>
+<tr><td><img src="images/case3.png" /></td><td>1 = Expansion [EXP]<br />2 = Stable [STABLE]<br />3 = Contraction [CONTR]<br />4 = Divergence [GC] (Concentration [DC])</td></tr>
+<tr><td><img src="images/case6.png" /></td><td>1 = Contraction [CONTR]<br />2 = Stable [STABLE]<br />3 = Expansion [EXP]<br />4 = Fragmentation [GE] (Convergence [DE])</td></tr>
+</table>
+
+<table><i><br /><br />Events derived due to NO SPATIAL RELATIONSHIPS</i><BR /><br />
+Generation and Disappearance events occur when the distance to the nearest associated polygon is greater than the threshold distance.
+<tr><th>T1 polygons (solid fill) and T2 polygons(dotted) in Change Layer</th><th>Events</th></tr>
+<tr><td><img src="images/case7.png" /></td><td>1 = Disappearance [DIS]<br />2 = Generation [GEN]</td></tr>
+
+</table>
+</tr>
+</table>
+
+
+</td></tr>
+
+
+
+</table>
+
+</body>
+
+</html>

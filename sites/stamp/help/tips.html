@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>STAMP HTML Help -- Tips</title></head>
+
+<body>
+<table width="80%">
+
+<tr>
+<td align="center">
+
+<table width="100%">
+<tr>
+<td align= "center"><a href="index.html">Home</a></td><td align= "center"><a href="overview.html">STAMP Overview</a></td>  <td align= "center"><a href="utility.html">Polygon Utility</a></td><td align= "center"><a href="overlay.html">Polygon Overlay</a></td>  <td align= "center"><a href="voronoi.html">Voronoi Polygons</a></td>  <td align= "center"><a href="metrics.html">Polygon Metrics</a></td>  <td align= "center"><a href="about.html">About</a></td>  <td align= "center"><a href="feedback.html">Feedback</a></td>
+</tr>
+</table>
+
+</td>
+</tr>
+<tr><td><b>The Really Basic STAMP Tip Sheet</b> <i>updated Dec 5, 2007</i></td></tr>
+
+<tr><td>
+
+<table width="100%">
+<tr>
+<td valign="top">
+
+1) Back up your data, input fields are deleted if they have similar names to the fields used for processing. It's good practice to have as few fields in the input data as possible (3 minimum for shapefiles)
+<br><br>
+2) I'm having some problems getting the setup project to install on some machines. If you run through the set up project and everything works, but the toolbar is NOT added to ArcMap when you fire it up, add "ClassLibrary1.olb" through the Tools > customize > add from file option in ArcMap. The olb file will be located in the install directory.
+<br><br>
+3) DO NOT set the working directory to be the same directory where your input data are stored. ALL SHAPEFILES will be DELETED from the workspace directory.
+<br />
+<br />
+4) If there is a crash during Overlay or Voronoi tools, and you have run the tools more than once during an ArcMap session, try restarting ArcMap and rerunning.
+<br>
+<br>
+5) If you want a slicker looking graph than the output provides, download the GraphViz software and run the tempgraph.dot file through DOT. You can also edit the tempgraph.dot file in any text editor.
+<br>
+<br>
+6) In the CHNGLYRS attribute tables, the values for polygon groups are the same for all member polygons of the group because the values are for the group as a whole. For example, the ExpN attribute contains the area of expansion northward for the whole polygon group (unique TOPO)
+<br><br>
+<td></td>
+</tr>
+</table>
+
+
+</td></tr>
+
+
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>STAMP HTML Help -- Overview</title></head>
+
+<body>
+<table width="80%">
+
+<tr>
+<td align="center">
+
+<table width="100%">
+<tr>
+<td align= "center"><a href="index.html">Home</a></td><td align= "center"><a href="overview.html">STAMP Overview</a></td> <td align= "center"><a href="utility.html">Polygon Utility</a></td> <td align= "center"><a href="overlay.html">Polygon Overlay</a></td>  <td align= "center"><a href="voronoi.html">Voronoi Polygons</a></td>  <td align= "center"><a href="metrics.html">Polygon Metrics</a></td>  <td align= "center"><a href="about.html">About</a></td>  <td align= "center"><a href="feedback.html">Feedback</a></td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+<tr><td><b>Overview and Requirements</b></td></tr>
+
+<tr><td align="center">
+
+<table width="100%">
+<tr>
+<td valign="top">Spatial-temporal analysis of moving polygons (STAMP) is software for analyzing changes in multiple polygon layers inside ArcGIS. There are fairly strict data requirements for using this code, as the method was developed to address a specific research problem. However, I hope the tools here will still be useful to some people tasked with analyzing change in polygonal data. 
+<br /><br />
+<i>Single Part Features</i><br />
+
+Input polygon data need to be simple, one-part features. This means that one polygon is associated with one record in the table. If you have mutli-part polygons you can create single-part features by using the “explode multi-part features” tool on the Advanced Editing Toolbar in ArcMap. 
+<br /><br />
+<i>Spatially Exclusive Polygons</i><br />
+This simply means that polygons should be topologically correct (non-overlapping).
+<br /><br />
+<i>Temporal Resolution</i><br />
+Polygon layers should be evenly distributed through time. For example, all polygons could be from different years if you are interested in exploring annual change (i.e. urbanization), or from different days if you’re interested in more quickly changing phenomena (i.e. wildfire), but the temporal intervals should be constant between consecutive layers.<br /><br />
+</td>
+<td valign="top"><img src="images/overview2.png" /></td>
+</tr>
+</table>
+
+</td></tr>
+<tr><td><b>Basic Procedure</b></td></tr>
+<tr><td align="center">
+
+<table width="100%">
+<tr>
+<td>The basic procedure for running a STAMP analysis is as follows:<br />
+1) Check input polygons are spatially exclusive with the <a href="utility.html">Polygon Utility</a><br />
+2) Run the <a href="overlay.html">Polygon Overlay Tool</a><br />
+3) Compute <a href="voronoi.html">Voronoi Polygons</a> <br />
+4) Compute <a href="metrics.html">Polygon Metrics</a> <br />
+Note: it is best to run these one after another and examine results at the end. Some of the processes depend on the layers being in the original order in the map's table of contents.
+<br /><br /></td>
+<td valign="top"></td>
+</tr>
+</table>
+
+</td></tr>
+
+<tr><td><b>Reserved Field and Layer Names</b></td></tr>
+<tr><td align="center">
+
+<table width="100%">
+<tr>
+<td>File output names are hardcoded and output into the workspace directory specified on the <a href="overlay.html">Overlay Tool Form</a>. The following files are created by STAMP and existing files in the workspace directory with these names will be automatically deleted.<br />
+<table border="1" cellpadding="2"><tr><th>File Name</th><th>Description</th></tr>
+<tr><td>CHNGLYR#</td><td>Change layers are created by the STAMP Overlay tool. These layers are the union of each pair of consecutive input layers and are used for most further processing and analysis. There are a total of n-1 change layers created.</td></tr>
+<tr><td>layername”Vor”</td><td>Vor shapefiles are temporary shapefiles create during by the Voronoi Polygons Tool. These represent voronoi polygons using the vertices of the input polygons as generator points.</td></tr>
+<tr><td>layername”VorDis”</td><td>VorDis shapefiles are final voronoi polygons for each input layer. They are the result of dissolving the Vor polygons based on the id of the input polygons.</td></tr>
+<tr><td>polLines#</td><td>Line shapefiles called polLines# are created by the Overlay Tool and only used during the overlay procedure</td></tr>
+<tr><td>graph</td><td>An image file representing a directed graph of the spatial-temporal assocations in the input layers can be optionally created by the <a href="metrics.html">Polygon Metrics Form</a>.</td></tr>
+<tr><td>polystats.txt</td><td>A text file stores the output of the polygon metrics computed.</td></tr>
+<tr><td>history.csv</td><td>History files contain one record for each spatial-temporal history, and are optionally created by the <a href="metrics.html">Polygon Metrics Form</a></td></tr>
+<tr><td>tempgraph.dot</td><td>A file creating in the DOT graphing language representing the directed graph of spatial-temporal associations. It is optionally created by the <a href="metrics.html">Polygon Metrics Form</a></td></tr>
+<tr><td>config.txt</td><td>A text file for storing the information selected in the Overlay Form, such as layer names, number of input layers, and the classification of T1 or T2 movements</td></tr>
+</table>
+</td>
+<td valign="top"></td>
+</tr>
+<tr>
+<td><br />Field names are created for STAMP attributes. It is recommended that input polygon layers have as few attributes as possible to reduce naming conflicts with the following field names.<br />
+<table border="1" cellpadding="2"><tr><th>FieldName</th><th>Layer</th><th>Description</th></tr>
+<tr><td>TOPO </td><td>CHNGLYR#</td><td>the polygon group ID relating polygons from two time periods</td></tr>
+<tr><td>EVENT </td><td>CHNGLYR#</td><td>the event for each polygon</td></tr>
+<tr><td>MEXP </td><td>CHNGLYR#</td><td>total expansion for polygon group</td></tr>
+<tr><td>MCONTR </td><td>CHNGLYR#</td><td>total contraction for polygon group</td></tr>
+<tr><td>UNI / DIV </td><td>CHNGLYR#</td><td>flags for union and division</td></tr>
+<tr><td>MID </td><td>CHNGLYR#</td><td>holds the OID of the linked polygon for movement events</td></tr>
+<tr><td>MID_1 </td><td>CHNGLYR#</td><td>holds the DISTANCE to the linked polygon for movement events</td></tr>
+<tr><td>LINK </td><td>CHNGLYR#</td><td>holds polyID of the linked polygon </td></tr>
+<tr><td>dirExpN </td><td>CHNGLYR#</td><td>expansion in North direction (ContN for contraction north etc)</td></tr>
+<tr><td>sizeMove  </td><td>CHNGLYR#</td><td>total movement for polygon group</td></tr>
+<tr><td>  </td><td></td><td></td></tr>
+<tr><td>S1S2   </td><td>polLines#</td><td>the state of the line time period 1 and time period 2</td></tr>
+<tr><td>polyFID    </td><td>polLines#</td><td>poly OID of line in time period 2</td></tr>
+<tr><td>polyFID1    </td><td>polLines#</td><td>poly OID of line in time period 1</td></tr>
+</table>
+
+</td>
+</tr>
+
+</table>
+
+</td></tr>
+</table>
+
+</body>
+
+</html>
