@@ -55,7 +55,7 @@
               </li>
               <li><a href="#downloads">Downloads</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#photos">Photos</a></li>
+              <!-- <li><a href="#photos">Photos</a></li> -->
               <li><a href="#"><small>Back to top</small></a></li>
             </ul>
           </div>
@@ -77,8 +77,8 @@
           $.get('sections/people.html', function(data){ $('#people').html(data) }),
           $.get('sections/downloads.html', function(data){ $('#downloads').html(data) }),
           $.get('sections/publications.html', function(data){ $('#publications').html(data) }),
-          $.get('sections/contact.html', function(data){ $('#contact').html(data) }),
-          $.get('sections/photos.html', function(data){ $('#photos').html(data) })
+          $.get('sections/contact.html', function(data){ $('#contact').html(data) })//,
+          // $.get('sections/photos.html', function(data){ $('#photos').html(data) })
         ).done(function() {
           // Init parallax
           $.stellar({
