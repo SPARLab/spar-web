@@ -14,7 +14,7 @@
       <!-- Page header -->
       <div class="page-header">
         <h1>
-          <img src="./src/images/headers/SPAR_logo2_transparent.png" alt="SPARLab" width="350px" />
+          <img class="img-responsive" src="./src/images/headers/SPAR_logo2_transparent.png" alt="SPARLab" width="350px" />
           <small>Spatial Pattern Analysis &amp Research Lab</small>
         </h1>
       </div>
@@ -64,12 +64,21 @@
 
     </div>
 
+    <!-- Used by isBreakpoint() js function -->
+    <div class="device-xs visible-xs"></div>
+    <div class="device-sm visible-sm"></div>
+    <div class="device-md visible-md"></div>
+    <div class="device-lg visible-lg"></div>
 
     <!-- JAVASCRIPT -->
     <script src="./src/vendor/jquery/dist/jquery.min.js"></script>
     <script src="./src/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./src/vendor/stellar.js/jquery.stellar.min.js"></script>
     <script>
+      function isBreakpoint( alias ) {
+        return $('.device-' + alias).is(':visible');
+      }
+
       $(function(){
         // Load pages
         $.when(
@@ -80,14 +89,14 @@
           $.get('sections/contact.html', function(data){ $('#contact').html(data) })//,
           // $.get('sections/photos.html', function(data){ $('#photos').html(data) })
         ).done(function() {
-          // Init parallax
-          $.stellar({
-            horizontalScrolling: false,
-            verticalOffset: 300
-          });
+          if (isBreakpoint('md') || isBreakpoint('lg')){
+            // Init parallax
+            $.stellar({
+              horizontalScrolling: false,
+              verticalOffset: 300
+            });
+          }
         });
-
-
       });
 
       // Make affixed nav width 100% of parent col

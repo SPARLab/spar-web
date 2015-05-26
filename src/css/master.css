@@ -49,8 +49,18 @@ body{
 #people .jumbotron{
   background: url(../images/headers/IMG_6614.jpg);
   background-size: 100%;
-  /*background-repeat: no-repeat;*/
   background-attachment: fixed;
+}
+@media (max-width: 992px) {
+  #people  .jumbotron, #about .jumbotron{
+    background-attachment: scroll;
+  }
+  #about .jumbotron{
+    background-size: auto;
+  }
+  #people  .jumbotron{
+    background-size: 100%;
+  }
 }
 
 .jumbotron span{
