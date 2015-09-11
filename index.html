@@ -92,12 +92,11 @@
       $(function(){
         // Load pages
         $.when(
-          $.get('sections/about.html', function(data){ $('div#about').html(data) }),
-          $.get('sections/people.html', function(data){ $('div#people').html(data) }),
-          $.get('sections/downloads.html', function(data){ $('div#downloads').html(data) }),
-          $.get('sections/publications.html', function(data){ $('div#publications').html(data) }),
-          $.get('sections/contact.html', function(data){ $('div#contact').html(data) })//,
-          // $.get('sections/photos.html', function(data){ $('#photos').html(data) })
+          $.get('sections/about.html', function(data){ $('#about').html(data) }),
+          $.get('sections/people.html', function(data){ $('#people').html(data) }),
+          $.get('sections/downloads.html', function(data){ $('#downloads').html(data) }),
+          $.get('sections/publications.html', function(data){ $('#publications').html(data) }),
+          $.get('sections/contact.html', function(data){ $('#contact-info').html(data) })//,
         ).done(function() {
           // Init parallax
           if (isBreakpoint('md') || isBreakpoint('lg')){
@@ -106,23 +105,9 @@
 
           // Refresh scrollspy
           $('[data-spy="scroll"]').each(function () {
-            var $spy = $(this).scrollspy('refresh')
+            $(this).scrollspy('refresh');
           });
         });
-        // $('#about').load('sections/about.html');
-        // $('#people').load('sections/people.html');
-        // $('#downloads').load('sections/downloads.html');
-        // $('#publications').load('sections/publications.html');
-        // $('#contact-info').load('sections/contact.html');
-        //
-        // if (isBreakpoint('md') || isBreakpoint('lg')){
-        //   $.stellar({ horizontalScrolling: false, verticalOffset: 300 });
-        // }
-        //
-        // // Refresh scrollspy
-        // $('[data-spy="scroll"]').each(function () {
-        //   var $spy = $(this).scrollspy('refresh');
-        // });
 
         // Make affixed nav width 100% of parent col
         $(window).resize(function () { $('#spar-nav.affix').width($('.category-nav').width()); });
