@@ -44,6 +44,7 @@
           <div id="people"></div>
           <div id="downloads"></div>
           <div id="contact-info"></div>
+          <div id="social-media"></div>
         </div>
 
         <!-- Navigation bar -->
@@ -69,7 +70,8 @@
                 </ul>
               </li>
               <li><a href="#downloads">Software</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#contact-info">Contact</a></li>
+              <li><a href="#social-media">Social Media</a></li>
               <!-- <li><a href="#photos">Photos</a></li> -->
               <li><a href="#"><small>Back to top</small></a></li>
             </ul>
@@ -101,7 +103,8 @@
           $.get('sections/people.html', function(data){ $('#people').html(data) }),
           $.get('sections/downloads.html', function(data){ $('#downloads').html(data) }),
           $.get('sections/publications.html', function(data){ $('#publications').html(data) }),
-          $.get('sections/contact.html', function(data){ $('#contact-info').html(data) })//,
+          $.get('sections/contact.html', function(data){ $('#contact-info').html(data) }),
+          $.get('sections/social_media.html', function(data){ $('#social-media').html(data) })//,
         ).done(function() {
           // Init parallax
           if (isBreakpoint('md') || isBreakpoint('lg')){
