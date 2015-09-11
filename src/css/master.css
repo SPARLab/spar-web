@@ -1,7 +1,10 @@
 body{
   position: relative;
   height: 100%;
-  width: 100%;
+}
+#about, #publications, #people, #downloads, #contact-info {
+  display: block;
+  overlow: auto;
 }
 
 .staff-pic {
@@ -28,16 +31,16 @@ body{
 /* add border to active links */
 #spar-nav .nav .active>a, #spar-nav .nav .active>a:hover{
 	border-left: 2px solid #0a6ebd;
-  color: #0a6ebd
+  color: #0a6ebd;
 }
 #spar-nav .nav>li>a:hover{
 	background: none;
 	border-left: 1px solid #0a6ebd;
-  color: #0a6ebd
+  color: #0a6ebd;
 }
 #spar-nav .nav>li>a:focus{
   background: none;
-  color: #2196f3
+  color: #2196f3;
 }
 
 /* JUMBOTRON IMAGES AND CSS */
